@@ -13,4 +13,15 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
+
+app.MapGet("/saludo", () =>
+{
+    return Results.Ok(new
+    {
+        mensaje = "Hola desde mi Web API .NET",
+        autor = "Cristina",
+        fecha = DateTime.Now
+    });
+});
+
 app.Run();
